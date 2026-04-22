@@ -165,7 +165,7 @@ export function MealPlans() {
                     asChild
                   >
                     <a
-                      href="https://wa.me/919511961444"
+                      href="https://wa.me/919511961444?text=Hi!%20I%27d%20like%20to%20order%20from%20Anant%C3%A9%20Foods."
                       target="_blank"
                       rel="noopener noreferrer"
                     >

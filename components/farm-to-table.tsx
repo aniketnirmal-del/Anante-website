@@ -1,45 +1,56 @@
-import { Sprout, ShoppingBasket, Truck, ChefHat, HandHeart } from "lucide-react";
+import Image from "next/image";
 
-const steps = [
+type Step = {
+  image: string;
+  alt: string;
+  label: string;
+  color: string;
+  border: string;
+  accent: string;
+  description?: string;
+  bubbles?: string[];
+};
+
+const steps: Step[] = [
   {
-    icon: Sprout,
-    label: "Farms",
-    description: "Veggies sourced fresh from our own farms",
+    image: "/images/fresh-ingredients.jpg.webp",
+    alt: "Procuring fresh vegetables from farmer at farm",
+    label: "From the Farm",
+    description: "We source only A-grade ingredients early morning directly from our farmers",
     color: "text-green-700",
-    bg: "bg-green-50",
     border: "border-green-200",
+    accent: "bg-green-50",
   },
   {
-    icon: ShoppingBasket,
-    label: "Procurement",
-    description: "Procured directly — no middlemen, no compromise",
-    color: "text-lime-700",
-    bg: "bg-lime-50",
-    border: "border-lime-200",
-  },
-  {
-    icon: Truck,
-    label: "Transport",
-    description: "Produce transported fresh to our kitchen daily",
-    color: "text-amber-700",
-    bg: "bg-amber-50",
-    border: "border-amber-200",
-  },
-  {
-    icon: ChefHat,
-    label: "Kitchen",
-    description: "Chefs prepare food in a warm, homely environment",
+    image: "/images/authentic-thali.jpg",
+    alt: "Live kitchen with women cooking with love",
+    label: "Our Kitchen",
     color: "text-orange-700",
-    bg: "bg-orange-50",
     border: "border-orange-200",
+    accent: "bg-orange-50",
+    bubbles: [
+      "FSSAI Certified Kitchen",
+      "No plastic utensils · No microplastics",
+      "Cooked in small batches",
+    ],
   },
   {
-    icon: HandHeart,
-    label: "You",
-    description: "Fresh, nutritious meals delivered to your door",
+    image: "/images/everyday-meals.png",
+    alt: "Meals delivered at office",
+    label: "Delivered to You",
+    description: "Meals are packed and delivered on time, every time.",
+    color: "text-amber-700",
+    border: "border-amber-200",
+    accent: "bg-amber-50",
+  },
+  {
+    image: "/images/happy-customers.jpg",
+    alt: "Happy and healthy stomach",
+    label: "Happy & Healthy",
+    description: "Our meals are easy on your stomach. No acidity or heaviness.",
     color: "text-rose-700",
-    bg: "bg-rose-50",
     border: "border-rose-200",
+    accent: "bg-rose-50",
   },
 ];
 
@@ -67,16 +78,22 @@ export function FarmToTable() {
         </div>
 
         {/* Steps */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-0">
+        <div className="flex flex-col lg:flex-row items-start justify-center gap-0">
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col lg:flex-row items-center w-full lg:w-auto">
               {/* Step Card */}
-              <div className="flex flex-col items-center text-center group w-full lg:w-44 xl:w-52">
-                {/* Icon circle */}
+              <div className="flex flex-col items-center text-center group w-full lg:w-52 xl:w-60 px-3">
+                {/* Image circle */}
                 <div
-                  className={`w-20 h-20 rounded-full ${step.bg} border-2 ${step.border} flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform duration-300`}
+                  className={`w-36 h-36 rounded-full overflow-hidden border-2 ${step.border} shadow-md mb-4 flex-shrink-0 group-hover:scale-105 transition-transform duration-300`}
                 >
-                  <step.icon className={`h-9 w-9 ${step.color}`} />
+                  <Image
+                    src={step.image}
+                    alt={step.alt}
+                    width={144}
+                    height={144}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 {/* Step number */}
@@ -85,19 +102,37 @@ export function FarmToTable() {
                 </span>
 
                 {/* Label */}
-                <h3 className={`text-lg font-serif font-bold mb-2 ${step.color}`}>
+                <h3 className={`text-base font-serif font-bold mb-3 ${step.color}`}>
                   {step.label}
                 </h3>
 
-                {/* Description */}
-                <p className="text-sm text-muted-foreground leading-relaxed px-2">
-                  {step.description}
-                </p>
+                {/* Description or Speech Bubbles */}
+                {step.bubbles ? (
+                  <div className="flex flex-col gap-2 items-center w-full">
+                    {step.bubbles.map((bubble, bi) => (
+                      <div key={bi} className="flex flex-col items-center w-full">
+                        {/* Upward pointer triangle */}
+                        <div
+                          className={`w-0 h-0 border-l-[6px] border-r-[6px] border-b-[7px] border-l-transparent border-r-transparent border-b-orange-100 -mb-px`}
+                        />
+                        <div
+                          className={`${step.accent} border ${step.border} rounded-xl px-3 py-1.5 text-xs font-medium ${step.color} leading-snug text-center w-full`}
+                        >
+                          {bubble}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {step.description}
+                  </p>
+                )}
               </div>
 
               {/* Arrow connector — hidden after last step */}
               {index < steps.length - 1 && (
-                <div className="flex items-center justify-center my-4 lg:my-0 lg:mx-2 xl:mx-4">
+                <div className="flex items-center justify-center my-6 lg:my-0 lg:mx-2 xl:mx-3 lg:mt-[-5rem]">
                   {/* Vertical arrow on mobile */}
                   <div className="flex lg:hidden flex-col items-center gap-1">
                     <div className="w-0.5 h-6 bg-border" />

@@ -63,7 +63,7 @@ export function Header() {
               </a>
             </Button>
             <Button size="sm" className="gap-2 bg-primary hover:bg-primary/90" asChild>
-              <a href="https://wa.me/919511961444" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/919511961444?text=Hi!%20I%27d%20like%20to%20order%20from%20Anant%C3%A9%20Foods." target="_blank" rel="noopener noreferrer">
                 <ShoppingBag className="h-4 w-4" />
                 Order Now
               </a>
@@ -129,7 +129,7 @@ export function Header() {
                   </a>
                 </Button>
                 <Button className="gap-2 bg-primary hover:bg-primary/90" asChild>
-                  <a href="https://wa.me/919511961444" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/919511961444?text=Hi!%20I%27d%20like%20to%20order%20from%20Anant%C3%A9%20Foods." target="_blank" rel="noopener noreferrer">
                     <ShoppingBag className="h-4 w-4" />
                     Order Now
                   </a>

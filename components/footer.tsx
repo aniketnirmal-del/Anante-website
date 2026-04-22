@@ -22,7 +22,7 @@ export function Footer() {
             to your doorstep.
           </p>
           <a
-            href="https://wa.me/919511961444"
+            href="https://wa.me/919511961444?text=Hi!%20I%27d%20like%20to%20order%20from%20Anant%C3%A9%20Foods."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-background text-primary px-8 py-4 rounded-full font-semibold hover:bg-background/90 transition-colors"
@@ -65,7 +65,7 @@ export function Footer() {
                   <Facebook className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://wa.me/919511961444"
+                  href="https://wa.me/919511961444?text=Hi!%20I%27d%20like%20to%20order%20from%20Anant%C3%A9%20Foods."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
