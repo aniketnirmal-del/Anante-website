@@ -11,12 +11,14 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-serif text-primary font-black md:text-6xl">
-              Ananté
-            </span>
+            <img
+              src="/images/logo.png"
+              alt="Ananté Premium Homefood"
+              style={{ height: '56px', width: 'auto', objectFit: 'contain', mixBlendMode: 'multiply' }}
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -60,9 +62,11 @@ export function Header() {
                 Call Now
               </a>
             </Button>
-            <Button size="sm" className="gap-2 bg-primary hover:bg-primary/90">
-              <ShoppingBag className="h-4 w-4" />
-              Order Now
+            <Button size="sm" className="gap-2 bg-primary hover:bg-primary/90" asChild>
+              <a href="https://wa.me/919511961444" target="_blank" rel="noopener noreferrer">
+                <ShoppingBag className="h-4 w-4" />
+                Order Now
+              </a>
             </Button>
           </div>
 
@@ -124,9 +128,11 @@ export function Header() {
                     Call Now
                   </a>
                 </Button>
-                <Button className="gap-2 bg-primary hover:bg-primary/90">
-                  <ShoppingBag className="h-4 w-4" />
-                  Order Now
+                <Button className="gap-2 bg-primary hover:bg-primary/90" asChild>
+                  <a href="https://wa.me/919511961444" target="_blank" rel="noopener noreferrer">
+                    <ShoppingBag className="h-4 w-4" />
+                    Order Now
+                  </a>
                 </Button>
               </div>
             </nav>

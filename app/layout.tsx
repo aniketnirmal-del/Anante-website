@@ -20,25 +20,17 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'ananté - Authentic Home Food in Pune',
+  title: 'Ananté Premium Homefood',
   description: 'Fresh, traditional Indian meals prepared with love and delivered across Pune. Experience the warmth of home-cooked food, made with authentic recipes.',
   generator: 'v0.app',
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/images/favicon.jpeg',
+        type: 'image/jpeg',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/images/favicon.jpeg',
   },
 }
 

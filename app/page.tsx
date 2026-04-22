@@ -1,6 +1,7 @@
 import { Header } from "@/components/header";
 import { MarqueeBanner } from "@/components/marquee-banner";
 import { HeroSection } from "@/components/hero-section";
+import { FarmToTable } from "@/components/farm-to-table";
 import { WhyChooseUs } from "@/components/why-choose-us";
 import { MealPlans } from "@/components/meal-plans";
 import { Services } from "@/components/services";
@@ -20,8 +21,23 @@ export default function Home() {
         />
       </div>
       
-      <HeroSection />
-      
+      {/* Shared watermark background spanning hero + farm-to-table */}
+      <div className="relative">
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <img
+            src="/images/thali-sketch-bg.jpg"
+            alt=""
+            className="w-full h-full object-cover opacity-35"
+            style={{ objectPosition: 'center -200px' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/90 via-background/70 to-background/90" />
+        </div>
+        <div className="relative z-10">
+          <HeroSection />
+          <FarmToTable />
+        </div>
+      </div>
+
       {/* Scrolling banner */}
       <MarqueeBanner 
         text="HAVE YOU EATEN TODAY?" 

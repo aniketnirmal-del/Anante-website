@@ -4,15 +4,6 @@ import { MessageCircle, ChefHat, Star, Users } from "lucide-react";
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img 
-          src="/images/thali-sketch-bg.jpg" 
-          alt="" 
-          className="w-full h-full object-cover opacity-15"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/80 to-background/95" />
-      </div>
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-primary blur-3xl" />
         <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-accent blur-3xl" />
@@ -79,8 +70,8 @@ export function HeroSection() {
               <div className="space-y-4">
                 <div className="relative h-56 rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
                   <img 
-                    src="/images/authentic-thali.jpg" 
-                    alt="Authentic Indian Thali" 
+                    src="/images/regional-recipes.png" 
+                    alt="Regional Indian Cuisines" 
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
